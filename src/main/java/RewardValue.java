@@ -1,31 +1,25 @@
 import java.math.BigDecimal;
 
 public class RewardValue {
-    public double cash;
-    public int miles;
+    public double cashValue;
+    public int milesValue;
 
-    public RewardValue (){}
-    public RewardValue (double cash){
-
-    }
-    public RewardValue (int miles){
-
+    public RewardValue (double cashValue){
+    this.cashValue = cashValue;
+    this.milesValue = (int) (cashValue / .0035);
     }
 
-    public double getCash() {
-        return cash;
-    }
-
-    public void setCash(double cash) {
-        this.cash = cash;
+    public RewardValue (int milesValue){
+    this.milesValue = milesValue;
+    this.cashValue = milesValue * .0035;
     }
 
     public double getCashValue(){
-        double cashValue = (miles / 0.00305);
-        return cashValue;
+        return this.cashValue;
     }
     public double getMilesValue(){
-        double milesValue = (cash * 0.00305);
-        return milesValue;
+        return this.milesValue;
     }
+
+
 }
